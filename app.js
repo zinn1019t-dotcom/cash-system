@@ -608,9 +608,17 @@ async function exportCSV() {
 
   }
 
-  const csv = rows.map((row) => row.map(csvEscape).join(",")).join("\r\n");
+  const csv = rows
 
-  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    .map((row) => row.map(csvEscape).join(","))
+
+    .join("\r\n");
+
+  // Excel向けにUTF-8 BOMを付与
+
+  const bom = "\uFEFF";
+
+  const blob = new Blob([bom + csv], { type: "text/csv;charset=utf-8;" });
 
   const url = URL.createObjectURL(blob);
 
@@ -633,6 +641,7 @@ async function exportCSV() {
   URL.revokeObjectURL(url);
 
 }
+ 
 
 function csvEscape(value) {
 
