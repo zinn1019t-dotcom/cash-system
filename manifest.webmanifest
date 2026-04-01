@@ -1,8 +1,16 @@
 {
- "name": "POSレジ",
- "short_name": "POS",
- "start_url": "./index.html",
- "display": "standalone",
- "background_color": "#f6f8fb",
- "theme_color": "#1f6feb"
+
+  "name": "POSレジ",
+
+  "short_name": "POS",
+
+  "start_url": "./index.html",
+
+  "display": "standalone",
+
+  "background_color": "#f6f8fb",
+
+  "theme_color": "#1f6feb"
+
 }
+ 
