@@ -19,42 +19,51 @@
 <main class="layout">
 <section class="panel products-panel">
 <div class="panel-head">
-<h2>商品</h2>
-<button id="loadSampleBtn">サンプル読込</button>
+<h2>商品登録</h2>
+<button id="loadSampleBtn" type="button">サンプル読込</button>
 </div>
 <form id="productForm" class="product-form">
 <input id="productName" type="text" placeholder="商品名" required>
 <input id="productPrice" type="number" placeholder="価格" min="0" step="1" required>
 <button type="submit">追加</button>
 </form>
+<div class="panel-subhead">
+<h3>商品一覧</h3>
+</div>
 <div id="products" class="products"></div>
 </section>
 <section class="panel cart-panel">
 <div class="panel-head">
 <h2>会計</h2>
-<button id="clearCartBtn" class="danger">カートクリア</button>
+<button id="clearCartBtn" type="button" class="danger">カートクリア</button>
 </div>
 <div id="cart" class="cart-list"></div>
 <div class="summary">
-<div><span>合計</span><strong id="totalAmount">¥0</strong></div>
-<div class="pay-row">
+<div class="summary-row">
+<span>合計</span>
+<strong id="totalAmount">¥0</strong>
+</div>
+<div class="summary-row pay-row">
 <label for="receivedAmount">預かり金</label>
 <input id="receivedAmount" type="number" min="0" step="1" placeholder="0">
 </div>
-<div><span>おつり</span><strong id="changeAmount">¥0</strong></div>
+<div class="summary-row">
+<span>おつり</span>
+<strong id="changeAmount">¥0</strong>
 </div>
-<button id="checkoutBtn" class="primary large">会計完了</button>
+</div>
+<button id="checkoutBtn" type="button" class="primary large">会計完了</button>
 </section>
 <section class="panel history-panel">
 <div class="panel-head">
 <h2>履歴</h2>
-<button id="refreshHistoryBtn">更新</button>
+<button id="refreshHistoryBtn" type="button">更新</button>
 </div>
 <div id="history" class="history-list"></div>
 </section>
 </main>
 <template id="productCardTemplate">
-<button class="product-card">
+<button class="product-card" type="button">
 <span class="product-name"></span>
 <span class="product-price"></span>
 </button>
@@ -66,10 +75,10 @@
 <div class="cart-sub"></div>
 </div>
 <div class="cart-actions">
-<button class="qty-minus">−</button>
+<button class="qty-minus" type="button">−</button>
 <span class="cart-qty">1</span>
-<button class="qty-plus">＋</button>
-<button class="remove-btn danger">削除</button>
+<button class="qty-plus" type="button">＋</button>
+<button class="remove-btn danger" type="button">削除</button>
 </div>
 </div>
 </template>
